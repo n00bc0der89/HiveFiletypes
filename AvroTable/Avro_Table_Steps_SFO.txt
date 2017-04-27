@@ -1,3 +1,8 @@
+For old version of Hive - where table cannot be stored as Avro 
+
+Create schema manually
+---------------------------------------------------------------
+
 avro schema - based on the sfo passenger records.
 {
   "namespace": "com.linkedin.haivvreo",
@@ -64,3 +69,28 @@ LOCATION '/user/root/SFO/';
  Insert data into avro schema table from external table
 	--------------------------------------------------------------------------
 	INSERT OVERWRITE TABLE sfo_passenger_avro SELECT * FROM sfo_passenger;
+	
+	-----------------------------------------------------------------------------------------------------------------------
+	For Hive version 0.14 and higher -
+	
+	CREATE TABLE sfo_passenger_avro2(
+		activityperiod int,
+		operatingairline string,
+		oaiatacode string,
+		publishedairline string,
+		paiatacode string,
+		geosummary string,
+		georegion string,
+		activitytypecode string,
+		pricecategorycode string,
+		terminal string,
+		boardingarea string,
+		passengercount bigint,
+		adjactivitytypecode string,
+		adjpasscount bigint,
+		pyear bigint,
+		pmonth string
+) STORED as AVRO;
+
+INSERT OVERWRITE TABLE sfo_passenger_avro2 SELECT * FROM sfo_passenger;
+	
