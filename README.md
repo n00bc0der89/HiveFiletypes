@@ -55,3 +55,12 @@ Sonal   SSC
 Sonal   HSC
 Sonal   BCOM
 Time taken: 13.673 seconds, Fetched: 13 row(s)
+
+------------------------------------------------------------------------------
+
+Work with json raw files using Hive -
+http://thornydev.blogspot.in/2013/07/querying-json-records-via-hive.html
+
+Create hive schema for json input using this tool - https://github.com/quux00/hive-json-schema
+
+Use this serde - https://github.com/rcongiu/Hive-JSON-Serde
